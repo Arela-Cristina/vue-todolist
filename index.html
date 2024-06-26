@@ -27,7 +27,10 @@
             </div>
             <div class="container-list">
                 <ul>
-                    <li v-for="(task, index) in tasks" :key="index">{{task}}<i class="fa-solid fa-xmark"></i></li>
+                    <li v-for="(task, index) in tasks" :key="index">{{task}}
+                        <!-- aggiungiamo un evento che ci permetta di cancellare task -->
+                        <i @click="removeTask(index)" class="fa-solid fa-xmark"></i>
+                    </li>
                 </ul>
             </div>
         </div>
