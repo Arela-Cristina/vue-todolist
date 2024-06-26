@@ -36,7 +36,10 @@ createApp({
         }
     },
     methods: {
-
+        randomBoolean() {
+            let randomBoolean = Math.floor(Math.random() * 2);
+            return randomBoolean === 1;
+        },
         // aggiungiamo il evento del click al bottone Aggiungi
         addTask() {
 
@@ -44,6 +47,7 @@ createApp({
             this.newTask.text = this.input;
             //facciamo un clone del oggeto newTask, cosi che possiamo aggiungere diverse task
             let cloneNewTask = { ...this.newTask };
+            cloneNewTask.done = this.randomBoolean();
             // sempre utilizziamo 'this' per richiamare una proprieta. Unshift e simile a  push, cioe pusha, ma il elemento si posizziona nel indice 0.
             this.tasks.unshift(cloneNewTask);
             console.log('hey', this.newTask);
@@ -54,7 +58,14 @@ createApp({
             console.log(eachIndex);
             //perrimuovere un elemento especifico del array utilizziamo splice, e li passiamo il argomento eachIndex, e anche il uno,perche vogliamo che al click della X ci cancella soltanto un singolo elemento.
             this.tasks.splice(eachIndex, 1);
-        }
+        },
+        //aggiungiamo una funzione toogle per scambiare il stylo quando  la task sia true or false
+        toggleDone(eachIndex) {
+            //prendiamo ilelemento done del array tasks, passandogli prima il argomento, e facciamo la condizione.
+            this.tasks[eachIndex].done = !this.tasks[eachIndex].done;
+        },
+
     }
 }
-).mount('#app') 
+).mount('#app')
+
