@@ -21,13 +21,13 @@
             </div>
             <div class="container-input">
                 <!-- aggiungiamo v-model per collegare newTask del nostro data di vue per dare un valore al input -->
-                <input type="text" id="task" v-model="newTask" name="task" placeholder="Nuova task">
+                <input type="text" id="task"   v-model="input" name="task" placeholder="Nuova task">
                 <!-- al click del botone devo aggiungere newTask alla lista di task -->
                 <button @click="addTask">Aggiungi</button>
             </div>
             <div class="container-list">
                 <ul>
-                    <li v-for="(task, index) in tasks" :key="index">{{task}}
+                    <li v-for="(task, index) in tasks" :key="index">{{task.text}}
                         <!-- aggiungiamo un evento che ci permetta di cancellare task -->
                         <i @click="removeTask(index)" class="fa-solid fa-xmark"></i>
                     </li>
