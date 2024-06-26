@@ -51,6 +51,7 @@ button {
     height: 31px;
     font-weight: bolder;
     font-size: 10px;
+    background-color: #ff735c;
 
 }
 
@@ -74,4 +75,15 @@ li {
     align-items: center;
     border-bottom: 1px solid #fff8f8;
     margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+li:hover {
+    background-color: rgb(155, 76, 155);
+    border-radius: 5px;
+}
+
+.testo-barrato {
+    text-decoration: line-through;
 }
