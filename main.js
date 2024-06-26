@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            logo: 0,
+            logo: './img/logo.jpg',
             tasks: [
                 'Allenarmi',
                 'Studiare',
