@@ -20,8 +20,10 @@
                 <h1>To do List</h1>
             </div>
             <div class="container-input">
-                <input type="text" id="task" name="task" placeholder="Nuova task">
-                <button>Aggiungi</button>
+                <!-- aggiungiamo v-model per collegare newTask del nostro data di vue per dare un valore al input -->
+                <input type="text" id="task" v-model="newTask" name="task" placeholder="Nuova task">
+                <!-- al click del botone devo aggiungere newTask alla lista di task -->
+                <button @click="addTask">Aggiungi</button>
             </div>
             <div class="container-list">
                 <ul>
