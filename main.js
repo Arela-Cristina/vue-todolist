@@ -4,6 +4,8 @@ createApp({
     data() {
         return {
             logo: './img/logo.jpg',
+            // aggiungiamo un collegamento tra data ed il campo di imput 
+            newTask: '',
             tasks: [
                 'Allenarmi',
                 'Studiare',
@@ -15,24 +17,11 @@ createApp({
     },
     methods: {
 
-        // nextImage() {
-        //     console.log('hey');
-
-        //     if (this.activeItem >= this.slides.length - 1) {
-        //         this.activeItem = 0;
-        //     } else {
-        //         this.activeItem++;
-        //     }
-        // },
-
-        // prevImage() {
-
-        //     if (this.activeItem <= 0) {
-        //         this.activeItem = this.slides.length - 1;
-        //     } else {
-        //         this.activeItem--;
-        //     }
-        // }
+        // aggiungiamo il evento del click al bottone Aggiungi
+        addTask() {
+            // sempre utilizziamo 'this' per richiamare una proprieta. unshift e simile  push, cioe pusha, ma il elemento si posizziona nel indice 0.
+            this.tasks.unshift(this.newTask);
+        }
     }
 }
 ).mount('#app') 
