@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/3bcbcfd75d.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Slider</title>
 </head>
@@ -15,7 +16,7 @@
     <div id="app">
         <div class="container">
             <div class="container-logo">
-                <img src="img/logo.jpg" alt="logo cloud task">
+                <img :src="logo" alt="logo cloud task">
                 <h1>To do List</h1>
             </div>
             <div class="container-input">
@@ -24,9 +25,7 @@
             </div>
             <div class="container-list">
                 <ul>
-                    <li>Compito 1</li>
-                    <li>Compito 2</li>
-                    <li>Compito 3</li>
+                    <li v-for="(task, index) in tasks" :key="index">{{task}}<i class="fa-solid fa-xmark"></i></li>
                 </ul>
             </div>
         </div>
